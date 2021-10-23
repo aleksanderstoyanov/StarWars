@@ -1,0 +1,19 @@
+﻿@page
+@model StarWarsApp.Pages.Characters.DetailsModel
+@{
+    ViewData["Title"] = Model.Character.Name;
+}
+<h2 class="text-center">@ViewData["Title"] <i class="fab fa-jedi-order ml-2"></i></h2>
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card mb-3 shadow p-2 mb-5 bg-white rounded" style="width: 500px;">
+        <img class="card-img-top" src="@Model.Character.Image" alt="Card image cap">
+        <div class="card-body bg-dark text-light">
+            <p class="card-text">Eye Color <i class="far fa-eye m-1"></i> - @Model.Character.EyeColor</p>
+            <p class="card-text">Height <i class="fas fa-ruler m-1"></i> - @((double)Model.Character.Height/100) cm</p>
+            <p class="card-text">Gender <i class="fas fa-venus-mars m-1"></i> - @Model.Character.Gender</p>
+            <p class="card-text">Weight <i class="fas fa-weight m-1"></i> - @Model.Character.Mass</p>
+            <hr style="border: 1px solid white;" />
+        </div>
+    </div>
+</div>

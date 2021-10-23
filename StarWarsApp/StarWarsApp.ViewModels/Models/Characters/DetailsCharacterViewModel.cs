@@ -1,8 +1,7 @@
-﻿namespace StarWarsApp.Services.Services.Characters
+﻿namespace StarWarsApp.ViewModels.Models.Characters
 {
-    public class CharacterServiceModel
+    public class DetailsCharacterViewModel
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public int Height { get; set; }
         public int Mass { get; set; }

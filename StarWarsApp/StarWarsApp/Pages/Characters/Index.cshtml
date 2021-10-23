@@ -4,6 +4,7 @@
     ViewData["Title"] = "Star Wars Characters";
 }
 <div class="container">
+    <h2 class="text-center">@ViewData["Title"]</h2>
     <div class="row d-flex justify-content-center">
         @foreach (var character in Model.Characters)
         {
@@ -13,10 +14,15 @@
                     <p class="card-text text-light">Name: @character.Name</p>
                     <p class="card-text text-light">Height: @character.Height</p>
                     <p class="card-text text-light">Mass: @character.Mass</p>
-                    <button class="btn btn-outline-success">See more <i class="fas fa-journal-whills"></i></button>
+                    <a class="btn btn-outline-success" asp-page="/Characters/Details" asp-route-id="@character.Id">See more <i class="fas fa-journal-whills"></i></a>
                 </div>
             </div>
 
         }
     </div>
 </div>
+@section scripts{
+    <script>
+        $(".row").hide().slideDown(1000);
+    </script>
+}

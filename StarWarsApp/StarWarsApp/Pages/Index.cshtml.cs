@@ -19,6 +19,7 @@
             Characters = this.characterService.GetTop3()
                 .Select(character => new HomeCharacterViewModel
                 {
+                    Id = character.Id,
                     Name = character.Name,
                     Image = character.Image
                 }).ToList();

@@ -21,7 +21,7 @@
                 <div class="carousel-caption d-none d-md-block">
 
                     <p class="h3 font-weight-bold">@firstCharacter.Name</p>
-                    <h5><a class="btn btn-success text-center">Details <i class="fas fa-journal-whills"></i></a></h5>
+                    <h5><a class="btn btn-success text-center" asp-page="/Characters/Details" asp-route-id="@firstCharacter.Id">Details <i class="fas fa-journal-whills"></i></a></h5>
                 </div>
             </div>
 
@@ -31,7 +31,7 @@
                 <div class="carousel-caption d-none d-md-block">
 
                     <p class="h3 font-weight-bold">@secondCharacter.Name</p>
-                    <h5><a class="btn btn-success text-center">Details <i class="fas fa-journal-whills"></i></a></h5>
+                    <h5><a class="btn btn-success text-center" asp-page="/Characters/Details" asp-route-id="@secondCharacter.Id">Details <i class="fas fa-journal-whills"></i></a></h5>
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
                 <div class="carousel-caption d-none d-md-block">
 
                     <p class="h3 font-weight-bold">@thirdCharacter.Name</p>
-                    <h5><a class="btn btn-success text-center">Details <i class="fas fa-journal-whills"></i></a></h5>
+                    <h5><a class="btn btn-success text-center" asp-page="/Characters/Details" asp-route-id="@thirdCharacter.Id">Details <i class="fas fa-journal-whills"></i></a></h5>
                 </div>
             </div>
 
@@ -58,4 +58,9 @@
     </div>
 
 </div>
+@section scripts{
+    <script>
+        $(".container").hide().slideDown(800);
+    </script>
+}
 

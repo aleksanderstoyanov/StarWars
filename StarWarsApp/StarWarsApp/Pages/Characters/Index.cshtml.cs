@@ -24,6 +24,7 @@ namespace StarWarsApp.Pages.Characters
                 .GetAll()
                 .Select(character => new AllCharactersViewModel
                 {
+                    Id=character.Id,
                     Name=character.Name,
                     Height=character.Height,
                     Image=character.Image,

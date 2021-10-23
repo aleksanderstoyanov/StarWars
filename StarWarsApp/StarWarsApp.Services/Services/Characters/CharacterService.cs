@@ -13,6 +13,23 @@
         {
             this.dbContext = dbContext;
         }
+        public CharacterServiceModel GetById(int id)
+        {
+            var character = dbContext.Characters
+                .FirstOrDefault(character => character.Id == id);
+            return new CharacterServiceModel
+            {
+                Id=character.Id,
+                Name = character.Name,
+                Height = character.Height,
+                Gender = character.Gender,
+                EyeColor = character.EyeColor,
+                HairColor = character.HairColor,
+                Image = character.Image,
+                SkinColor = character.SkinColor,
+                Mass = character.Mass
+            };
+        }
         public IEnumerable<CharacterServiceModel> GetAll()
         {
             return MapCharacters(this.dbContext.Characters.AsQueryable());
@@ -20,7 +37,7 @@
 
         public IEnumerable<CharacterServiceModel> GetTop3()
         {
-            return  MapCharacters(this.dbContext.Characters.Take(3));
+            return MapCharacters(this.dbContext.Characters.Take(3));
         }
 
         private IEnumerable<CharacterServiceModel> MapCharacters(IQueryable<Character> characters)
@@ -28,14 +45,15 @@
             return characters
                 .Select(character => new CharacterServiceModel
                 {
-                    Name=character.Name,
-                    Height=character.Height,
-                    Gender=character.Gender,
-                    EyeColor=character.EyeColor,
-                    HairColor=character.HairColor,
-                    Image=character.Image,
-                    SkinColor=character.SkinColor,
-                    Mass=character.Mass
+                    Id=character.Id,
+                    Name = character.Name,
+                    Height = character.Height,
+                    Gender = character.Gender,
+                    EyeColor = character.EyeColor,
+                    HairColor = character.HairColor,
+                    Image = character.Image,
+                    SkinColor = character.SkinColor,
+                    Mass = character.Mass
                 }).ToList();
         }
     }
