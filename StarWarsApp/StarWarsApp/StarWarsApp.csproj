@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\StarWarsApp.Data\StarWarsApp.Data.csproj" />
     <ProjectReference Include="..\StarWarsApp.Services\StarWarsApp.Services.csproj" />
+    <ProjectReference Include="..\StarWarsApp.ViewModels\StarWarsApp.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
