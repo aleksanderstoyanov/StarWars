@@ -4,6 +4,7 @@
     using StarWarsApp.Data.Data.Entities;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
 
     public class CharacterService : ICharacterService
     {
@@ -19,7 +20,7 @@
                 .FirstOrDefault(character => character.Id == id);
             return new CharacterServiceModel
             {
-                Id=character.Id,
+                Id = character.Id,
                 Name = character.Name,
                 Height = character.Height,
                 Gender = character.Gender,
@@ -45,7 +46,7 @@
             return characters
                 .Select(character => new CharacterServiceModel
                 {
-                    Id=character.Id,
+                    Id = character.Id,
                     Name = character.Name,
                     Height = character.Height,
                     Gender = character.Gender,
@@ -55,6 +56,22 @@
                     SkinColor = character.SkinColor,
                     Mass = character.Mass
                 }).ToList();
+        }
+        public async Task CreateAsync(string name, string hairColor, string eyeColor, int height, int mass, string skinColor, string gender, string image)
+        {
+            this.dbContext.Add(new Character
+            {
+                Name = name,
+                Image = image,
+                EyeColor = eyeColor,
+                HairColor = hairColor,
+                SkinColor = skinColor,
+                Gender = gender,
+                Height = height,
+                Mass = mass,
+
+            });
+            await this.dbContext.SaveChangesAsync();
         }
     }
 }

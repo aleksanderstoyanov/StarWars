@@ -8,13 +8,10 @@
     <div class="row d-flex justify-content-center">
         @foreach (var character in Model.Characters)
         {
-            <div class="card col-md-3 bg-dark m-3" style="width: 18rem;">
+            <div class="card col-md-3 bg-dark m-3 mb-3 shadow p-2 mb-5 bg-white rounded" style="width: 18rem;">
                 <img class="card-img-top" src=@character.Image alt="Card image cap">
                 <div class="card-body bg-dark">
-                    <p class="card-text text-light">Name: @character.Name</p>
-                    <p class="card-text text-light">Height: @character.Height</p>
-                    <p class="card-text text-light">Mass: @character.Mass</p>
-                    <a class="btn btn-outline-success" asp-page="/Characters/Details" asp-route-id="@character.Id">See more <i class="fas fa-journal-whills"></i></a>
+                    <a class="btn btn-outline-success offset-lg-3" asp-page="/Characters/Details" asp-route-id="@character.Id">See more <i class="fas fa-journal-whills"></i></a>
                 </div>
             </div>
 

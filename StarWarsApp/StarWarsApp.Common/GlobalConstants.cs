@@ -8,7 +8,7 @@
             public const int MaxHeight = 500;
 
             public const int MinMass = 1;
-            public const  int MaxMass = 1;
+            public const  int MaxMass = 900;
 
             public const int MinNameLength = 2;
             public const int MaxNameLength = 50;

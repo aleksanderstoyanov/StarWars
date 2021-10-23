@@ -1,4 +1,61 @@
 ﻿@page
 @model StarWarsApp.Pages.Characters.AddModel
 @{
+    ViewData["Title"] = "Create character";
+}
+<div class="container">
+    <form class="shadow-lg p-3 mb-5 mt-3 bg-white rounded" method="post">
+        <h2 class="text-center">@ViewData["Title"] <i class="fas fa-plus m-1"></i></h2>
+        <div class="form-group">
+            <label asp-for="Model.Name">Character name <i class="fas fa-signature"></i></label>
+            <input asp-for="Model.Name" type="text" class="form-control" placeholder="Enter name...">
+            <span asp-validation-for="Model.Name" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Model.Gender">Gender <i class="fas fa-venus-mars"></i></label>
+            <input asp-for="Model.Gender" type="text" class="form-control" placeholder="Enter gender...">
+            <span asp-validation-for="Model.Gender" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Model.Height">Height <i class="fas fa-ruler"></i></label>
+            <input asp-for="Model.Height" type="number" class="form-control" placeholder="Enter height...">
+            <span asp-validation-for="Model.Height" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Model.Mass">Mass <i class="fas fa-weight"></i></label>
+            <input asp-for="Model.Mass" type="number" class="form-control" placeholder="Enter mass...">
+            <span asp-validation-for="Model.Mass" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Model.Image">Image <i class="fas fa-images"></i></label>
+            <input asp-for="Model.Image" type="text" class="form-control" placeholder="Enter image...">
+            <span asp-validation-for="Model.Image" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Model.HairColor">Hair Color <i class="fas fa-tint"></i></label>
+            <input asp-for="Model.HairColor" type="text" class="form-control" placeholder="Enter hair color...">
+            <span asp-validation-for="Model.HairColor" style="color:red"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Model.SkinColor">Skin Color <i class="fas fa-hand-sparkles"></i> </label>
+            <input asp-for="Model.SkinColor" type="text" class="form-control" placeholder="Enter skin color...">
+            <span asp-validation-for="Model.SkinColor" style="color:red"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Model.EyeColor">Eye Color <i class="far fa-eye"></i></label>
+            <input asp-for="Model.EyeColor" type="text" class="form-control" placeholder="Enter eye color...">
+            <span asp-validation-for="Model.EyeColor" style="color:red"></span>
+        </div>
+
+        <button type="submit" class="btn btn-outline-dark offset-3 w-50" style="font-size:30px;">Submit <i class="fab fa-galactic-republic"></i></button>
+    </form>
+
+</div>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>
+        $('form').hide().slideDown(700);
+    </script>
 }
