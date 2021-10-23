@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWarsApp.Services", "Sta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWarsApp.ViewModels", "StarWarsApp.ViewModels\StarWarsApp.ViewModels.csproj", "{ECD6D2E0-CA98-4FBF-815F-753D9C1E59F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWarsApp.Common", "StarWarsApp.Common\StarWarsApp.Common.csproj", "{92A0E3C3-D3A0-41BF-B59A-15BEC7546DD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{ECD6D2E0-CA98-4FBF-815F-753D9C1E59F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD6D2E0-CA98-4FBF-815F-753D9C1E59F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECD6D2E0-CA98-4FBF-815F-753D9C1E59F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A0E3C3-D3A0-41BF-B59A-15BEC7546DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A0E3C3-D3A0-41BF-B59A-15BEC7546DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A0E3C3-D3A0-41BF-B59A-15BEC7546DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A0E3C3-D3A0-41BF-B59A-15BEC7546DD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
