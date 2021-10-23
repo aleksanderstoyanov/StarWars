@@ -1,11 +1,9 @@
-﻿namespace StarWars.Services.Characters
+﻿namespace StarWarsApp.Services.Services.Characters
 {
-    using StarWars.Data;
-    using StarWars.Data.Entities;
-    using System;
+    using StarWarsApp.Data.Data;
+    using StarWarsApp.Data.Data.Entities;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Threading.Tasks;
 
     public class CharacterService : ICharacterService
     {
@@ -17,12 +15,12 @@
         }
         public IEnumerable<Character> GetAll()
         {
-            return this.dbContext.Characters.ToList();
+            return dbContext.Characters.ToList();
         }
 
         public IEnumerable<Character> GetTop3()
         {
-            return this.dbContext.Characters.Take(3).ToList();
+            return dbContext.Characters.Take(3).ToList();
         }
     }
 }

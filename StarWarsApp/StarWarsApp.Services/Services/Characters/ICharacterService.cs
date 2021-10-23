@@ -1,6 +1,6 @@
-﻿namespace StarWars.Services.Characters
+﻿namespace StarWarsApp.Services.Services.Characters
 {
-    using StarWars.Data.Entities;
+    using StarWarsApp.Data.Data.Entities;
     using System;
     using System.Collections.Generic;
     using System.Linq;

@@ -1,11 +1,12 @@
-﻿namespace StarWars.Data
+﻿namespace StarWarsApp.Data.Data
 {
     using Microsoft.EntityFrameworkCore;
-    using StarWars.Data.Entities;
+    using StarWarsApp.Data.Data.Entities;
+
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions options)
-            :base(options)
+            : base(options)
         {
 
         }

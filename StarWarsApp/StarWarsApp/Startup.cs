@@ -6,8 +6,10 @@ namespace StarWarsApp
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
-    using StarWars.Data;
-    using StarWars.Data.Seeders;
+    using StarWarsApp.Data.Data;
+    using StarWarsApp.Data.Data.Seeders;
+    using StarWarsApp.Services.Services.Characters;
+
     public class Startup
     {
         private readonly IWebHostEnvironment webHostEnvironment;
@@ -25,6 +27,7 @@ namespace StarWarsApp
             services.AddRazorPages();
             services.AddDbContext<ApplicationDbContext>(options =>
               options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnectionString")));
+            services.AddTransient<ICharacterService, CharacterService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

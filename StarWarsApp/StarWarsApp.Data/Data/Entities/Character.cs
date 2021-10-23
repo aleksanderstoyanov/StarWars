@@ -1,9 +1,5 @@
-﻿namespace StarWars.Data.Entities
+﻿namespace StarWarsApp.Data.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
     public class Character
     {
         public int Id { get; set; }

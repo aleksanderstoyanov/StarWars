@@ -1,8 +1,9 @@
-﻿namespace StarWars.Data.Seeders
+﻿namespace StarWarsApp.Data.Data.Seeders
 {
     using Newtonsoft.Json;
-    using StarWars.Data.Dto;
-    using StarWars.Data.Entities;
+    using StarWarsApp.Data.Data;
+    using StarWarsApp.Data.Data.Dto;
+    using StarWarsApp.Data.Data.Entities;
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
