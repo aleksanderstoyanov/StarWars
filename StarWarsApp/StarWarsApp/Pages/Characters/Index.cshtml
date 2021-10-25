@@ -11,7 +11,8 @@
             <div class="card col-md-3 bg-dark m-3 mb-3 shadow p-2 mb-5 bg-white rounded" style="width: 18rem;">
                 <img class="card-img-top" src=@character.Image alt="Card image cap">
                 <div class="card-body bg-dark">
-                    <a class="btn btn-outline-success offset-lg-3" asp-page="/Characters/Details" asp-route-id="@character.Id">See more <i class="fas fa-journal-whills"></i></a>
+                    <a class="btn btn-outline-success" asp-page="/Characters/Details" asp-route-id="@character.Id">Details <i class="fas fa-journal-whills m-1"></i></a>
+                    <a class="btn btn-outline-warning" asp-page="/Characters/Edit" asp-route-id="@character.Id">Edit <i class="fas fa-pencil-alt m-1"></i></a>
                 </div>
             </div>
 

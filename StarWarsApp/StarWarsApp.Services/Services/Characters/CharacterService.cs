@@ -14,6 +14,39 @@
         {
             this.dbContext = dbContext;
         }
+        public async Task CreateAsync(string name, string hairColor, string eyeColor, int height, int mass, string skinColor, string gender, string image)
+        {
+            this.dbContext.Add(new Character
+            {
+                Name = name,
+                Image = image,
+                EyeColor = eyeColor,
+                HairColor = hairColor,
+                SkinColor = skinColor,
+                Gender = gender,
+                Height = height,
+                Mass = mass,
+
+            });
+            await this.dbContext.SaveChangesAsync();
+        }
+
+        public async Task EditAsync(int id, string name, string hairColor, string eyeColor, int height, int mass, string skinColor, string gender, string image)
+        {
+            var character = this.dbContext
+            .Characters.FirstOrDefault(character => character.Id == id);
+
+            character.Name = name;
+            character.HairColor = hairColor;
+            character.EyeColor = eyeColor;
+            character.Height = height;
+            character.Mass = mass;
+            character.SkinColor = skinColor;
+            character.Gender = gender;
+            character.Image = image;
+
+            await this.dbContext.SaveChangesAsync();
+        }
         public CharacterServiceModel GetById(int id)
         {
             var character = dbContext.Characters
@@ -40,7 +73,6 @@
         {
             return MapCharacters(this.dbContext.Characters.Take(3));
         }
-
         private IEnumerable<CharacterServiceModel> MapCharacters(IQueryable<Character> characters)
         {
             return characters
@@ -56,22 +88,6 @@
                     SkinColor = character.SkinColor,
                     Mass = character.Mass
                 }).ToList();
-        }
-        public async Task CreateAsync(string name, string hairColor, string eyeColor, int height, int mass, string skinColor, string gender, string image)
-        {
-            this.dbContext.Add(new Character
-            {
-                Name = name,
-                Image = image,
-                EyeColor = eyeColor,
-                HairColor = hairColor,
-                SkinColor = skinColor,
-                Gender = gender,
-                Height = height,
-                Mass = mass,
-
-            });
-            await this.dbContext.SaveChangesAsync();
         }
     }
 }
