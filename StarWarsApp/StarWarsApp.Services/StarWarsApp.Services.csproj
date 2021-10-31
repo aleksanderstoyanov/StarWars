@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -14,6 +14,9 @@
     <Compile Include="Services\Characters\CharacterService.cs" />
     <Compile Include="Services\Characters\CharacterServiceModel.cs" />
     <Compile Include="Services\Characters\ICharacterService.cs" />
+    <Compile Include="Services\Movies\IMoviesService.cs" />
+    <Compile Include="Services\Movies\MovieService.cs" />
+    <Compile Include="Services\Movies\MovieServiceModel.cs" />
   </ItemGroup>
 
   <ItemGroup>
