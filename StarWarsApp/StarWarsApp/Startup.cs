@@ -9,6 +9,7 @@ namespace StarWarsApp
     using StarWarsApp.Data.Data;
     using StarWarsApp.Data.Data.Seeders;
     using StarWarsApp.Services.Services.Characters;
+    using StarWarsApp.Services.Services.Movies;
 
     public class Startup
     {
@@ -28,16 +29,18 @@ namespace StarWarsApp
             services.AddDbContext<ApplicationDbContext>(options =>
               options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnectionString")));
             services.AddTransient<ICharacterService, CharacterService>();
+            services.AddTransient<IMoviesService, MovieService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             using (var scope = app.ApplicationServices.CreateScope())
             {
-                var rootPath = this.webHostEnvironment.WebRootPath + @"\"+ "characters.json";
+                var rootPath = this.webHostEnvironment.WebRootPath;
                 var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                 dbContext.Database.Migrate();
-                new CharactersSeeder().SeedAsync(dbContext, rootPath).GetAwaiter().GetResult();
+                new CharactersSeeder().SeedAsync(dbContext, rootPath + @"\" + "characters.json").GetAwaiter().GetResult();
+                new MoviesSeeder().SeedAsync(dbContext, rootPath + @"\" + "movies.json").GetAwaiter().GetResult();
             }
             if (env.IsDevelopment())
             {
