@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StarWarsApp.Common\StarWarsApp.Common.csproj" />
     <ProjectReference Include="..\StarWarsApp.Data\StarWarsApp.Data.csproj" />
   </ItemGroup>
 

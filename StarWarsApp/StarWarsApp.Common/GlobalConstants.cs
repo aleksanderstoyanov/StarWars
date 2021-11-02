@@ -2,6 +2,8 @@
 {
     public static class GlobalConstants
     {
+        public const string Movies_Cache_Key = "movie_key";
+        public const string Characters_Cache_Key = "characters_key";
         public static class Characters
         {
             public const int MinHeight = 1;

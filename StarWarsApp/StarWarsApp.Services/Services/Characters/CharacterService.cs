@@ -1,18 +1,23 @@
 ﻿namespace StarWarsApp.Services.Services.Characters
 {
+    using Microsoft.Extensions.Caching.Memory;
     using StarWarsApp.Data.Data;
     using StarWarsApp.Data.Data.Entities;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
+    using static Common.GlobalConstants;
+
     public class CharacterService : ICharacterService
     {
         private readonly ApplicationDbContext dbContext;
+        private readonly IMemoryCache memoryCache;
 
-        public CharacterService(ApplicationDbContext dbContext)
+        public CharacterService(ApplicationDbContext dbContext, IMemoryCache memoryCache)
         {
             this.dbContext = dbContext;
+            this.memoryCache = memoryCache;
         }
         public async Task CreateAsync(string name, string hairColor, string eyeColor, int height, int mass, string skinColor, string gender, string image)
         {
@@ -66,7 +71,13 @@
         }
         public IEnumerable<CharacterServiceModel> GetAll()
         {
-            return MapCharacters(this.dbContext.Characters.AsQueryable());
+            var characters = this.memoryCache.Get<IEnumerable<CharacterServiceModel>>(Characters_Cache_Key);
+            if (characters == null)
+            {
+                characters = MapCharacters(this.dbContext.Characters.AsQueryable());
+                this.memoryCache.Set(Characters_Cache_Key, characters);
+            }
+            return characters;
         }
 
         public IEnumerable<CharacterServiceModel> GetTop3()
