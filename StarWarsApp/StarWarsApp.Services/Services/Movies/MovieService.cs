@@ -18,9 +18,25 @@
             this.dbContext = dbContext;
             this.memoryCache = memoryCache;
         }
+        public MovieServiceModel GetById(int id)
+        {
+            var movie = this.dbContext.Movies
+                .FirstOrDefault(movie => movie.Id == id);
+            return new MovieServiceModel
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                Description = movie.Description,
+                Director = movie.Director,
+                Producer = movie.Producer,
+                Image = movie.Image,
+                ReleaseDate = movie.ReleaseDate,
+                EpisodeId = movie.EpisodeId
+            };
+        }
         public IEnumerable<MovieServiceModel> GetAll()
         {
-  
+
             var movies = this.memoryCache.Get<IEnumerable<MovieServiceModel>>(Movies_Cache_Key);
             if (movies == null)
             {

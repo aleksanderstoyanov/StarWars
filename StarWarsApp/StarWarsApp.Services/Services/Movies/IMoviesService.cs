@@ -8,6 +8,7 @@
 
     public interface IMoviesService
     {
+        public MovieServiceModel GetById(int id);
         public IEnumerable<MovieServiceModel> GetAll();
     }
 }

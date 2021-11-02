@@ -1,12 +1,11 @@
 namespace StarWarsApp.Pages.Movies
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Threading.Tasks;
-    using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using StarWarsApp.Services.Services.Movies;
+    using StarWarsApp.ViewModels.Models.Movies;
+
     public class IndexModel : PageModel
     {
         private readonly IMoviesService moviesService;
@@ -15,10 +14,15 @@ namespace StarWarsApp.Pages.Movies
         {
             this.moviesService = moviesService;
         }
-        public IEnumerable<MovieServiceModel> Movies { get; set; }
+        public IEnumerable<HomeMovieViewModel> Movies { get; set; }
         public void OnGet()
         {
-            this.Movies = this.moviesService.GetAll();
+            this.Movies = this.moviesService.GetAll()
+                .Select(movie => new HomeMovieViewModel
+                {
+                    Id = movie.Id,
+                    Image = movie.Image
+                });
         }
     }
 }
