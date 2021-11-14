@@ -1,10 +1,5 @@
 ﻿namespace StarWarsApp.Services.Services.Movies
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     public class MovieServiceModel
     {
         public int Id { get; set; }
