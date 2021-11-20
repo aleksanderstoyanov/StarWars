@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\Cache\CacheService.cs" />
+    <Compile Include="Services\Cache\ICacheService.cs" />
     <Compile Include="Services\Characters\CharacterService.cs" />
     <Compile Include="Services\Characters\CharacterServiceModel.cs" />
     <Compile Include="Services\Characters\ICharacterService.cs" />

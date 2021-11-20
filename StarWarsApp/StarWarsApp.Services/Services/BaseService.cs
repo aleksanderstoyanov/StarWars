@@ -6,6 +6,5 @@
     {
         protected MapperConfiguration configuration = new MapperConfiguration(cfg =>
              cfg.AddProfile(new StarWarsProfile()));
-
     }
 }
