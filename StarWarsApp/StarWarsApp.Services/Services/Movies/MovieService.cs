@@ -1,42 +1,29 @@
 ﻿namespace StarWarsApp.Services.Services.Movies
 {
     using AutoMapper.QueryableExtensions;
-    using Microsoft.Extensions.Caching.Memory;
     using StarWarsApp.Data.Data;
-    using System;
+    using StarWarsApp.Services.Services.Cache;
     using System.Collections.Generic;
     using System.Linq;
-
-    using static Common.GlobalConstants;
     public class MovieService :BaseService, IMoviesService
     {
+        private readonly ICacheService cacheService;
         private readonly ApplicationDbContext dbContext;
-        private readonly IMemoryCache memoryCache;
-
-        public MovieService(ApplicationDbContext dbContext, IMemoryCache memoryCache)
+        public MovieService(ICacheService cacheService, ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
-            this.memoryCache = memoryCache;
+            this.cacheService = cacheService;
         }
         public MovieServiceModel GetById(int id)
         {
             var movie = this.dbContext.Movies
                 .ProjectTo<MovieServiceModel>(configuration)
                 .FirstOrDefault(movie => movie.Id == id);
-            return movie;
-          
+            return movie;          
         }
         public IEnumerable<MovieServiceModel> GetAll()
         {
-
-            var movies = this.memoryCache.Get<IEnumerable<MovieServiceModel>>(Movies_Cache_Key);
-            if (movies == null)
-            {
-                movies = this.dbContext.Movies
-                    .ProjectTo<MovieServiceModel>(configuration)
-                    .ToList();
-                this.memoryCache.Set(Movies_Cache_Key, movies, TimeSpan.FromMinutes(30));
-            }
+            var movies = this.cacheService.GetCachedMovies();
             return movies;
         }
     }
