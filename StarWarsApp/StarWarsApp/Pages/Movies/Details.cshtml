@@ -6,12 +6,12 @@
 <h2 class="text-center">@ViewData["Title"] <i class="fab fa-jedi-order ml-2"></i></h2>
 <div class="container d-flex justify-content-center">
     <div class="card mb-3 shadow p-2 mb-5 bg-white rounded">
-        <img class="card-img-top" src="@Model.Movie.Image" style="height:400px;object-fit:cover;"  alt="Card image cap">
+        <img class="card-img-top" src="@Model.Movie.Image" style="height:400px;object-fit:cover;" alt="Card image cap">
         <div class="card-body bg-dark text-light text-center">
-            <p class="card-text d-inline-flex ml-4">Director: @Model.Movie.Director</p>
-            <p class="card-text d-inline-flex ml-4">Producer: @Model.Movie.Producer</p>
-            <p class="card-text d-inline-flex ml-4">ReleaseDate: @Model.Movie.ReleaseDate</p>
-            <p class="card-text d-inline-flex ml-4">Episode:  @Model.Movie.EpisodeId</p>
+            <p class="card-text d-inline-flex ml-4"><i class="fas fa-bullhorn mt-1 mr-1"></i> Director: @Model.Movie.Director</p>
+            <p class="card-text d-inline-flex ml-4"><i class="fas fa-video mt-1 mr-1"></i> Producer: @Model.Movie.Producer</p>
+            <p class="card-text d-inline-flex ml-4"> <i class="far fa-calendar-alt mt-1 mr-1"></i> ReleaseDate: @Model.Movie.ReleaseDate</p>
+            <p class="card-text d-inline-flex ml-4"><i class="fas fa-list-ol mt-1 mr-1"></i> Episode: @Model.Movie.EpisodeId</p>
             <hr />
             <p class="card-text">@Model.Movie.Description</p>
         </div>

@@ -32,8 +32,12 @@ namespace StarWarsApp.Pages.Characters
         }
         public async Task<IActionResult> OnPost(CharacterInputModel model, int id)
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             await this.characterService
-             .EditAsync(id,model.Name, model.HairColor, model.EyeColor, model.Height, model.Mass, model.SkinColor, model.Gender, model.Image);
+             .EditAsync(id, model.Name, model.HairColor, model.EyeColor, model.Height, model.Mass, model.SkinColor, model.Gender, model.Image);
 
             return Redirect("/Characters");
         }
