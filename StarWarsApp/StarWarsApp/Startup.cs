@@ -8,6 +8,7 @@ namespace StarWarsApp
     using Microsoft.Extensions.Hosting;
     using StarWarsApp.Data.Data;
     using StarWarsApp.Data.Data.Seeders;
+    using StarWarsApp.Services.Services.Cache;
     using StarWarsApp.Services.Services.Characters;
     using StarWarsApp.Services.Services.Movies;
 
@@ -30,6 +31,7 @@ namespace StarWarsApp
               options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnectionString")));
             services.AddTransient<ICharacterService, CharacterService>();
             services.AddTransient<IMoviesService, MovieService>();
+            services.AddTransient<ICacheService, CacheService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
