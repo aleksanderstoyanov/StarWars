@@ -25,9 +25,9 @@
         }
         public IEnumerable<CharacterServiceModel> GetCharacters(int movieId)
         {
-            var movie = this.moviesService.GetById(movieId);
+            var currentMovie = this.moviesService.GetById(movieId);
             var movieCharacters = dbContext.CharacterMovies
-               .Where(movie => movie.MovieId == movie.MovieId)
+               .Where(movie => movie.MovieId == currentMovie.Id)
                .Select(character => character.Character)
                .ProjectTo<CharacterServiceModel>(configuration)
                .ToList();
