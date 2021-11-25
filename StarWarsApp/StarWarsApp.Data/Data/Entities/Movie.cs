@@ -8,6 +8,10 @@ namespace StarWarsApp.Data.Data.Entities
 {
     public class Movie
     {
+        public Movie()
+        {
+            this.CharacterMovies = new HashSet<CharacterMovie>();
+        }
         public int Id { get; set; }
         public string Title { get; set; }
         public int EpisodeId { get; set; }
@@ -16,5 +20,7 @@ namespace StarWarsApp.Data.Data.Entities
         public string Producer { get; set; }
         public string ReleaseDate { get; set; }
         public string Image { get; set; }
+        public ICollection<CharacterMovie> CharacterMovies { get; set; }
+
     }
 }

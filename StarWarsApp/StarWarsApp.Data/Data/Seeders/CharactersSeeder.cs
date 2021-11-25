@@ -4,10 +4,10 @@
     using StarWarsApp.Data.Data;
     using StarWarsApp.Data.Data.Dto;
     using StarWarsApp.Data.Data.Entities;
+    using System;
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
-
     public class CharactersSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext context, string rootPath)
@@ -17,7 +17,8 @@
                 return;
             }
             var jsonResult = File.ReadAllText(rootPath);
-            var models = JsonConvert.DeserializeObject<CharacterDto[]>(jsonResult)
+            var dtoModels = JsonConvert.DeserializeObject<CharacterDto[]>(jsonResult);
+            var characters = dtoModels
                 .Select(character => new Character
                 {
                     Name = character.Name,
@@ -29,9 +30,9 @@
                     HairColor = character.HairColor,
                     Image = character.Image
                 });
-            context.Characters.AddRange(models);
+            context.Characters.AddRange(characters);
             await context.SaveChangesAsync();
-
+            await CharacterMoviesSeeder.SeedCharacterMovies(context, dtoModels);
         }
     }
 }

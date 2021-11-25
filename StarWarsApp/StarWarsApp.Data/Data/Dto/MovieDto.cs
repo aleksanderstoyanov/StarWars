@@ -19,5 +19,6 @@ namespace StarWarsApp.Data.Data.Dto
         [JsonProperty("release_date")]
         public string ReleaseDate { get; set; }
         public string Image { get; set; }
+        public int[] Characters { get; set; }
     }
 }
