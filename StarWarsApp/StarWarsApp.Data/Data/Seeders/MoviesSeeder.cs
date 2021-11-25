@@ -1,16 +1,15 @@
-﻿
-namespace StarWarsApp.Data.Data.Seeders
+﻿namespace StarWarsApp.Data.Data.Seeders
 {
     using Newtonsoft.Json;
     using StarWarsApp.Data.Data.Dto;
     using StarWarsApp.Data.Data.Entities;
+    using System;
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
-
     public class MoviesSeeder : ISeeder
     {
-        public async Task SeedAsync(ApplicationDbContext context, string rootPath)
+        public async Task SeedAsync(ApplicationDbContext context,string rootPath)
         {
             if (context.Movies.Any())
             {

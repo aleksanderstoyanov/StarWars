@@ -6,7 +6,8 @@
     "director": "George Lucas",
     "producer": "Gary Kurtz, Rick McCallum",
     "release_date": "1977-05-25",
-    "image": "https://pbs.twimg.com/media/E1su7bEXIAsUbcg.jpg:large"
+    "image": "https://pbs.twimg.com/media/E1su7bEXIAsUbcg.jpg:large",
+    "characters": [ 2, 3, 4, 5, 6, 7, 8 ]
 
   },
   {
@@ -16,7 +17,8 @@
     "director": "Irvin Kershner",
     "producer": "Gary Kurtz, Rick McCallum",
     "release_date": "1980-05-17",
-    "image": "https://preview.redd.it/yjg06idw5k071.jpg?auto=webp&s=654fcbeeed6b9e425e2cabd6855343133464dbcc"
+    "image": "https://preview.redd.it/yjg06idw5k071.jpg?auto=webp&s=654fcbeeed6b9e425e2cabd6855343133464dbcc",
+    "characters": [ 2, 3, 4, 5, 6, 7 ]
 
   },
   {
@@ -26,7 +28,8 @@
     "director": "Richard Marquand",
     "producer": "Howard G. Kazanjian, George Lucas, Rick McCallum",
     "release_date": "1983-05-25",
-    "image": "https://static.posters.cz/image/1300/posters/star-wars-episode-vi-return-of-the-jedi-i90220.jpg"
+    "image": "https://static.posters.cz/image/1300/posters/star-wars-episode-vi-return-of-the-jedi-i90220.jpg",
+    "characters": [ 3, 6 ]
   },
   {
     "title": "The Phantom Menace",
@@ -35,7 +38,8 @@
     "director": "George Lucas",
     "producer": "Rick McCallum",
     "release_date": "1999-05-19",
-    "image": "https://pbs.twimg.com/media/E1Gxg2PX0AI0Qqq.jpg:large"
+    "image": "https://pbs.twimg.com/media/E1Gxg2PX0AI0Qqq.jpg:large",
+    "characters": [ 8 ]
   },
   {
     "title": "Attack of the Clones",
@@ -44,7 +48,8 @@
     "director": "George Lucas",
     "producer": "Rick McCallum",
     "release_date": "2002-05-16",
-    "image": "https://preview.redd.it/rx1xq27wqry61.jpg?auto=webp&s=261d313e111bdb4fda218f124b2928811560e08b"
+    "image": "https://preview.redd.it/rx1xq27wqry61.jpg?auto=webp&s=261d313e111bdb4fda218f124b2928811560e08b",
+    "characters": [ 3, 8, 4, 5 ]
   },
   {
     "title": "Revenge of the Sith",
@@ -53,6 +58,7 @@
     "director": "George Lucas",
     "producer": "Rick McCallum",
     "release_date": "2005-05-19",
-    "image": "https://pbs.twimg.com/media/E1dPqRMX0AQ7B5j.jpg"
+    "image": "https://pbs.twimg.com/media/E1dPqRMX0AQ7B5j.jpg",
+    "characters": [ 3, 8 ]
   }
 ]

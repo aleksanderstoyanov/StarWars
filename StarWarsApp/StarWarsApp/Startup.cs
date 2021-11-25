@@ -9,6 +9,7 @@ namespace StarWarsApp
     using StarWarsApp.Data.Data;
     using StarWarsApp.Data.Data.Seeders;
     using StarWarsApp.Services.Services.Cache;
+    using StarWarsApp.Services.Services.CharacterMovies;
     using StarWarsApp.Services.Services.Characters;
     using StarWarsApp.Services.Services.Movies;
 
@@ -31,6 +32,7 @@ namespace StarWarsApp
               options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnectionString")));
             services.AddTransient<ICharacterService, CharacterService>();
             services.AddTransient<IMoviesService, MovieService>();
+            services.AddTransient<ICharacterMovieService, CharacterMovieService>();
             services.AddTransient<ICacheService, CacheService>();
         }
 
@@ -41,8 +43,8 @@ namespace StarWarsApp
                 var rootPath = this.webHostEnvironment.WebRootPath;
                 var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                 dbContext.Database.Migrate();
-                new CharactersSeeder().SeedAsync(dbContext, rootPath + @"\" + "characters.json").GetAwaiter().GetResult();
                 new MoviesSeeder().SeedAsync(dbContext, rootPath + @"\" + "movies.json").GetAwaiter().GetResult();
+                new CharactersSeeder().SeedAsync(dbContext, rootPath + @"\" + "characters.json").GetAwaiter().GetResult();
             }
             if (env.IsDevelopment())
             {
