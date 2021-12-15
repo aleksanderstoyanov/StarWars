@@ -25,9 +25,10 @@
             if (characters == null)
             {
                 characters = this.dbContext.Characters
+                    .Where(character => !character.isDeleted)
                     .ProjectTo<CharacterServiceModel>(configuration)
                     .ToList();
-                this.memoryCache.Set(Characters_Cache_Key, characters, TimeSpan.FromMinutes(30));
+                this.memoryCache.Set(Characters_Cache_Key, characters, TimeSpan.FromSeconds(1));
             }
             return characters;
         }

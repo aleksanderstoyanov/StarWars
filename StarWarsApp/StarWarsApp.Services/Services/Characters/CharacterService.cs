@@ -48,6 +48,16 @@
 
             await this.dbContext.SaveChangesAsync();
         }
+        public async Task DeleteAsync(int id)
+        {
+            var character = this.dbContext.Characters
+                .FirstOrDefault(character => character.Id == id);
+            if (character != null)
+            {
+                character.isDeleted= true;
+            }
+            await this.dbContext.SaveChangesAsync();
+        }
         public CharacterServiceModel GetById(int id)
         {
             var character = dbContext.Characters

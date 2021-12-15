@@ -29,5 +29,10 @@ namespace StarWarsApp.Pages.Characters
                 })
                 .ToList();
         }
+        public async Task<ActionResult> OnGetDelete(int id)
+        {
+            await this.characterService.DeleteAsync(id);
+            return Redirect("/Characters");
+        }
     }
 }

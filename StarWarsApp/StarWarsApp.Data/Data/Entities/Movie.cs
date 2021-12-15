@@ -20,6 +20,7 @@ namespace StarWarsApp.Data.Data.Entities
         public string Producer { get; set; }
         public string ReleaseDate { get; set; }
         public string Image { get; set; }
+        public bool isDeleted { get; set; } = false;
         public ICollection<CharacterMovie> CharacterMovies { get; set; }
 
     }

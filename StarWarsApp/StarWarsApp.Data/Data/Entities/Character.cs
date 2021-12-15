@@ -18,6 +18,7 @@ namespace StarWarsApp.Data.Data.Entities
         public string EyeColor { get; set; }
         public string Gender { get; set; }
         public string Image { get; set; }
+        public bool isDeleted { get; set; } = false;
         public ICollection<CharacterMovie> CharacterMovies { get; set; }
     }
 }
