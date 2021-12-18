@@ -2,6 +2,8 @@ namespace StarWarsApp.Pages.Movies
 {
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using StarWarsApp.Services.Services.Movies;
     using StarWarsApp.ViewModels.Models.Movies;
@@ -23,6 +25,10 @@ namespace StarWarsApp.Pages.Movies
                     Id = movie.Id,
                     Image = movie.Image
                 });
+        }
+        public async Task<ActionResult> OnGetDelete(int id) {
+            await this.moviesService.DeleteAsync(id);
+            return Redirect("/Movies");
         }
     }
 }

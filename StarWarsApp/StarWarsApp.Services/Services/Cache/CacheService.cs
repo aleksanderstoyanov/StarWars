@@ -38,9 +38,10 @@
             if (movies == null)
             {
                 movies = this.dbContext.Movies
+                    .Where(movie => !movie.isDeleted)
                     .ProjectTo<MovieServiceModel>(configuration)
                     .ToList();
-                this.memoryCache.Set(Movies_Cache_Key, movies, TimeSpan.FromMinutes(30));
+                this.memoryCache.Set(Movies_Cache_Key, movies, TimeSpan.FromSeconds(1));
             }
             return movies;
         }

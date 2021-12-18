@@ -27,7 +27,7 @@
         {
             var currentMovie = this.moviesService.GetById(movieId);
             var movieCharacters = dbContext.CharacterMovies
-               .Where(movie => movie.MovieId == currentMovie.Id)
+               .Where(movie => movie.MovieId == currentMovie.Id && !movie.Character.isDeleted)
                .Select(character => character.Character)
                .ProjectTo<CharacterServiceModel>(configuration)
                .ToList();
