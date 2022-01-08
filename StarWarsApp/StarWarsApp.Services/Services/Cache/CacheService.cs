@@ -5,6 +5,7 @@
     using StarWarsApp.Data.Data;
     using StarWarsApp.Services.Services.Characters;
     using StarWarsApp.Services.Services.Movies;
+    using StarWarsApp.Services.Services.Vehicles;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -44,6 +45,19 @@
                 this.memoryCache.Set(Movies_Cache_Key, movies, TimeSpan.FromSeconds(1));
             }
             return movies;
+        }
+
+        public IEnumerable<VehicleServiceModel> GetCachedVehicles()
+        {
+            var vehicles = this.memoryCache.Get<IEnumerable<VehicleServiceModel>>(Vehicles_Cache_Key);
+            if (vehicles == null)
+            {
+                vehicles = this.dbContext.Vehicles
+                    .ProjectTo<VehicleServiceModel>(configuration)
+                    .ToList();
+                this.memoryCache.Set(Vehicles_Cache_Key, vehicles, TimeSpan.FromSeconds(1));
+            }
+            return vehicles;
         }
     }
 }

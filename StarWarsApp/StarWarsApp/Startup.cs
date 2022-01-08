@@ -12,6 +12,7 @@ namespace StarWarsApp
     using StarWarsApp.Services.Services.CharacterMovies;
     using StarWarsApp.Services.Services.Characters;
     using StarWarsApp.Services.Services.Movies;
+    using StarWarsApp.Services.Services.Vehicles;
 
     public class Startup
     {
@@ -32,6 +33,7 @@ namespace StarWarsApp
               options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnectionString")));
             services.AddTransient<ICharacterService, CharacterService>();
             services.AddTransient<IMoviesService, MovieService>();
+            services.AddTransient<IVehicleService, VehicleService>();
             services.AddTransient<ICharacterMovieService, CharacterMovieService>();
             services.AddTransient<ICacheService, CacheService>();
         }
