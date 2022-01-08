@@ -29,6 +29,7 @@ namespace StarWarsApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(options =>
               options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnectionString")));
             services.AddTransient<ICharacterService, CharacterService>();
@@ -69,6 +70,7 @@ namespace StarWarsApp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
