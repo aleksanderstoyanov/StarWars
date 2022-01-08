@@ -3,6 +3,7 @@
     using Newtonsoft.Json;
     using StarWarsApp.Data.Data.Dto;
     using StarWarsApp.Data.Data.Entities;
+    using StarWarsApp.Data.Data.Seeders.Contracts;
     using System;
     using System.IO;
     using System.Linq;

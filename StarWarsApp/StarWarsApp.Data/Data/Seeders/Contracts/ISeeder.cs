@@ -1,7 +1,6 @@
-﻿namespace StarWarsApp.Data.Data.Seeders
+﻿namespace StarWarsApp.Data.Data.Seeders.Contracts
 {
     using StarWarsApp.Data.Data;
-    using System;
     using System.Threading.Tasks;
     public interface ISeeder
     {

@@ -45,6 +45,7 @@ namespace StarWarsApp
                 dbContext.Database.Migrate();
                 new MoviesSeeder().SeedAsync(dbContext, rootPath + @"\" + "movies.json").GetAwaiter().GetResult();
                 new CharactersSeeder().SeedAsync(dbContext, rootPath + @"\" + "characters.json").GetAwaiter().GetResult();
+                new VehiclesSeeder().SeedAsync(dbContext, rootPath + @"\" + "vehicles.json").GetAwaiter().GetResult();
             }
             if (env.IsDevelopment())
             {

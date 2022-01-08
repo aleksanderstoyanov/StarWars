@@ -12,6 +12,7 @@
         }
         public DbSet<Character> Characters { get; set; }
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<CharacterMovie> CharacterMovies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
