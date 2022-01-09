@@ -3,13 +3,14 @@
 @{
     ViewData["Title"] = "Star Wars Movies";
 }
+<link rel="stylesheet" href="~/css/movies.css" />
 <div class="container">
     <h2 class="text-center">@ViewData["Title"] <i class="fas fa-film ml-1"></i></h2>
     <div class="row d-flex justify-content-center">
         @foreach (var movie in Model.Movies)
         {
             var dynamicId = $"exampleModalMovieCenter" + movie.Id;
-            <div class="card col-md-3 bg-dark m-3 mb-3 shadow p-2 mb-5 bg-white rounded" style="width: 18rem;">
+            <div class="card col-md-3 bg-dark m-3 mb-3 p-2 mb-5 bg-white rounded">
                 <img class="card-img-top" src=@movie.Image alt="Card image cap" style="height:350px;">
                 <div class="card-body bg-dark text-center">
                     <a class="btn btn-outline-success" asp-page="/Movies/Details" asp-route-id="@movie.Id">Details <i class="fas fa-journal-whills m-2"></i></a>
