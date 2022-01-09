@@ -16,9 +16,9 @@
         public DbSet<CharacterMovie> CharacterMovies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<CharacterMovie>()
+            =>  modelBuilder
+                .Entity<CharacterMovie>()
                 .HasKey(x => new { x.CharacterId, x.MovieId });
-        }
+
     }
 }

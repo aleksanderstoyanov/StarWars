@@ -7,11 +7,11 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    public class CharacterService : BaseService,ICharacterService
+    public class CharacterService : BaseService, ICharacterService
     {
         private readonly ICacheService cacheService;
         private readonly ApplicationDbContext dbContext;
-        public CharacterService(ICacheService cacheService,ApplicationDbContext dbContext)
+        public CharacterService(ICacheService cacheService, ApplicationDbContext dbContext)
         {
             this.cacheService = cacheService;
             this.dbContext = dbContext;
@@ -54,27 +54,25 @@
                 .FirstOrDefault(character => character.Id == id);
             if (character != null)
             {
-                character.isDeleted= true;
+                character.isDeleted = true;
             }
             await this.dbContext.SaveChangesAsync();
         }
         public CharacterServiceModel GetById(int id)
-        {
-            var character = dbContext.Characters
-                .ProjectTo<CharacterServiceModel>(configuration)
-                .FirstOrDefault(character => character.Id == id);
-            return character;
-        }
+             => this.dbContext
+                 .Characters
+                 .ProjectTo<CharacterServiceModel>(configuration)
+                 .FirstOrDefault(character => character.Id == id);
+
         public IEnumerable<CharacterServiceModel> GetAll()
-        {
-            var characters = this.cacheService.GetCachedCharacters();
-            return characters;
-        }
+            => this.cacheService
+                .GetCachedCharacters();
+
         public IEnumerable<CharacterServiceModel> GetTop3()
-        {
-            return this.dbContext.Characters
+            => this.dbContext
+                .Characters
                 .ProjectTo<CharacterServiceModel>(configuration)
                 .Take(3);
-        }
+
     }
 }

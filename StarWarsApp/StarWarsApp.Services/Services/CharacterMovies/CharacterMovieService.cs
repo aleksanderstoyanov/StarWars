@@ -1,12 +1,11 @@
 ﻿namespace StarWarsApp.Services.Services.CharacterMovies
 {
-    using AutoMapper.QueryableExtensions;
-    using StarWarsApp.Data.Data;
-    using StarWarsApp.Services.Services.Characters;
-    using StarWarsApp.Services.Services.Movies;
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
+    using StarWarsApp.Data.Data;
+    using System.Collections.Generic;
+    using AutoMapper.QueryableExtensions;
+    using StarWarsApp.Services.Services.Movies;
+    using StarWarsApp.Services.Services.Characters;
 
     public class CharacterMovieService : BaseService,ICharacterMovieService
     {

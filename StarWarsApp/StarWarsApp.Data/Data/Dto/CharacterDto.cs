@@ -4,17 +4,17 @@
 
     public class CharacterDto
     {
-        public string Name { get; set; }
-        public int Height { get; set; }
-        public int Mass { get; set; }
+        public string Name { get; init; }
+        public int Height { get; init; }
+        public int Mass { get; init; }
         [JsonProperty("hair_color")]
-        public string HairColor { get; set; }
+        public string HairColor { get; init; }
         [JsonProperty("skin_color")]
-        public string SkinColor { get; set; }
+        public string SkinColor { get; init; }
         [JsonProperty("eye_color")]
-        public string EyeColor { get; set; }
-        public string Gender { get; set; }
-        public string Image { get; set; }
-        public int[] Episodes { get; set; }
+        public string EyeColor { get; init; }
+        public string Gender { get; init; }
+        public string Image { get; init; }
+        public int[] Episodes { get; init; }
     }
 }

@@ -22,22 +22,21 @@
             .FirstOrDefault(movie => movie.Id == id);
             if (movie != null)
             {
-                movie.isDeleted= true;
+                movie.isDeleted = true;
             }
             await this.dbContext.SaveChangesAsync();
         }
         public MovieServiceModel GetById(int id)
-        {
-            var movie = this.dbContext.Movies
+            => this.dbContext
+                .Movies
                 .ProjectTo<MovieServiceModel>(configuration)
                 .FirstOrDefault(movie => movie.Id == id);
-            return movie;
-        }
+
+
         public IEnumerable<MovieServiceModel> GetAll()
-        {
-            var movies = this.cacheService.GetCachedMovies();
-            return movies;
-        }
+             => this.cacheService
+                 .GetCachedMovies();
+
     }
 }
 

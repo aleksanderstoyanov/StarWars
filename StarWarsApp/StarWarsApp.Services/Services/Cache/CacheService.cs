@@ -1,14 +1,14 @@
 ﻿namespace StarWarsApp.Services.Services.Cache
 {
+    using System;
+    using System.Linq;
+    using StarWarsApp.Data.Data;
+    using System.Collections.Generic;
     using AutoMapper.QueryableExtensions;
     using Microsoft.Extensions.Caching.Memory;
-    using StarWarsApp.Data.Data;
-    using StarWarsApp.Services.Services.Characters;
     using StarWarsApp.Services.Services.Movies;
     using StarWarsApp.Services.Services.Vehicles;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
+    using StarWarsApp.Services.Services.Characters;
     using static StarWarsApp.Common.GlobalConstants;
     public class CacheService : BaseService, ICacheService
     {

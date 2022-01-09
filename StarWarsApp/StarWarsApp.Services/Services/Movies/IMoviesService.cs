@@ -1,8 +1,7 @@
 ﻿namespace StarWarsApp.Services.Services.Movies
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks;
-
+    using System.Collections.Generic;
     public interface IMoviesService
     {
         public MovieServiceModel GetById(int id);

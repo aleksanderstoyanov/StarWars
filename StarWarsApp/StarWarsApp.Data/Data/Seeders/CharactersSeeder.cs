@@ -1,14 +1,13 @@
 ﻿namespace StarWarsApp.Data.Data.Seeders
 {
+    using System.IO;
+    using System.Linq;
     using Newtonsoft.Json;
+    using System.Threading.Tasks;
     using StarWarsApp.Data.Data;
     using StarWarsApp.Data.Data.Dto;
     using StarWarsApp.Data.Data.Entities;
     using StarWarsApp.Data.Data.Seeders.Contracts;
-    using System;
-    using System.IO;
-    using System.Linq;
-    using System.Threading.Tasks;
     public class CharactersSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext context, string rootPath)

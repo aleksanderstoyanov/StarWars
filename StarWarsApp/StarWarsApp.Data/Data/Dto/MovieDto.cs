@@ -9,16 +9,16 @@ namespace StarWarsApp.Data.Data.Dto
 {
     public class MovieDto
     {
-        public string Title { get; set; }
+        public string Title { get; init; }
         [JsonProperty("episode_id")]
-        public int EpisodeId { get; set; }
+        public int EpisodeId { get; init; }
         [JsonProperty("opening_crawl")]
-        public string Description { get; set; }
-        public string Director { get; set; }
-        public string Producer { get; set; }
+        public string Description { get; init; }
+        public string Director { get; init; }
+        public string Producer { get; init; }
         [JsonProperty("release_date")]
-        public string ReleaseDate { get; set; }
-        public string Image { get; set; }
-        public int[] Characters { get; set; }
+        public string ReleaseDate { get; init; }
+        public string Image { get; init; }
+        public int[] Characters { get; init; }
     }
 }

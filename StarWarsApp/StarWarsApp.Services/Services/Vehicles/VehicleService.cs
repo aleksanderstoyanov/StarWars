@@ -8,14 +8,11 @@
         private readonly ICacheService cacheService;
 
         public VehicleService(ICacheService cacheService)
-        {
-            this.cacheService = cacheService;
-        }
+            => this.cacheService = cacheService;
+
         public IEnumerable<VehicleServiceModel> GetAll()
-        {
-            return this.cacheService.GetCachedVehicles();
+            => this.cacheService
+                .GetCachedVehicles();
 
-
-        }
     }
 }

@@ -5,7 +5,6 @@
     using StarWarsApp.Services.Services.Movies;
     using StarWarsApp.Services.Services.Vehicles;
     using StarWarsApp.Services.Services.Characters;
-
     public class StarWarsProfile : Profile
     {
         public StarWarsProfile()

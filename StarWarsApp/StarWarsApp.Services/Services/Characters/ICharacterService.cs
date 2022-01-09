@@ -1,8 +1,7 @@
 ﻿namespace StarWarsApp.Services.Services.Characters
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks;
-
+    using System.Collections.Generic;
     public interface ICharacterService
     {
         CharacterServiceModel GetById(int id);

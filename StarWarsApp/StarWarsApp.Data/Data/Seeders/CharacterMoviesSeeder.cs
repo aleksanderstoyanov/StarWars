@@ -1,15 +1,10 @@
-﻿using Newtonsoft.Json;
-using StarWarsApp.Data.Data.Dto;
-using StarWarsApp.Data.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StarWarsApp.Data.Data.Seeders
+﻿namespace StarWarsApp.Data.Data.Seeders
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+    using StarWarsApp.Data.Data.Dto;
+    using System.Collections.Generic;
+    using StarWarsApp.Data.Data.Entities;
     public static class CharacterMoviesSeeder
     {
         public static async Task SeedCharacterMovies(ApplicationDbContext context, IEnumerable<CharacterDto> dtoModels)
@@ -35,9 +30,5 @@ namespace StarWarsApp.Data.Data.Seeders
             }
             await context.SaveChangesAsync();
         }
-        //public async Task SeedMovieCharacters(ApplicationDbContext context, IEnumerable<MovieDto> dtoModels)
-        //{
-
-        //}
     }
 }

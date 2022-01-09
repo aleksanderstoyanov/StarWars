@@ -7,13 +7,13 @@
     using System.Threading.Tasks;
     public class VehicleServiceModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Model { get; set; }
-        public string Manufacturer { get; set; }
-        public int Crew { get; set; }
-        public int AtmosphereSpeed { get; set; }
-        public string Consumables { get; set; }
-        public string Image { get; set; }
+        public int Id { get; init; }
+        public string Name { get; init; }
+        public string Model { get; init; }
+        public string Manufacturer { get; init; }
+        public int Crew { get; init; }
+        public int AtmosphereSpeed { get; init; }
+        public string Consumables { get; init; }
+        public string Image { get; init; }
     }
 }
