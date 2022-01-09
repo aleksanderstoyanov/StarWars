@@ -1,5 +1,4 @@
-﻿
-namespace StarWarsApp.Controllers
+﻿namespace StarWarsApp.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
@@ -14,19 +13,19 @@ namespace StarWarsApp.Controllers
         private readonly IVehicleService vehicleService;
 
         public VehiclesController(IVehicleService vehicleService)
-        {
-            this.vehicleService = vehicleService;
-        }
+            => this.vehicleService = vehicleService;
+
         [HttpGet]
         public ActionResult<IEnumerable<VehiclesRequestModel>> GetAll()
-        {
-            return this.vehicleService.GetAll()
+            => this.vehicleService
+                .GetAll()
                 .Select(vehicle => new VehiclesRequestModel
                 {
                     Id = vehicle.Id,
                     Name = vehicle.Name,
                     Image = vehicle.Image,
-                }).ToList();
-        }
+                })
+                .ToList();
+
     }
 }

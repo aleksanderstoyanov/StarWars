@@ -1,19 +1,17 @@
 namespace StarWarsApp.Pages.Characters
 {
+    using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using StarWarsApp.Services.Services.Characters;
     using StarWarsApp.ViewModels.Models.Characters;
-    using System.Threading.Tasks;
-
     public class EditModel : PageModel
     {
         private readonly ICharacterService characterService;
 
         public EditModel(ICharacterService characterService)
-        {
-            this.characterService = characterService;
-        }
+            => this.characterService = characterService;
+
         public CharacterInputModel Model { get; set; }
         public void OnGet(int id)
         {

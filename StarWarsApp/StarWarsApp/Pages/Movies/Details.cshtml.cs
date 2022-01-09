@@ -7,13 +7,12 @@ namespace StarWarsApp.Pages.Movies
         private readonly IMoviesService moviesService;
 
         public DetailsModel(IMoviesService moviesService)
-        {
-            this.moviesService = moviesService;
-        }
+            => this.moviesService = moviesService;
+
         public MovieServiceModel Movie { get; set; }
         public void OnGet(int id)
-        {
-            this.Movie = this.moviesService.GetById(id);
-        }
+            => this.Movie = this.moviesService
+            .GetById(id);
+
     }
 }

@@ -3,15 +3,13 @@ namespace StarWarsApp.Pages.Characters
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using StarWarsApp.Services.Services.Characters;
     using StarWarsApp.ViewModels.Models.Characters;
-
     public class DetailsModel : PageModel
     {
         private readonly ICharacterService characterService;
 
         public DetailsModel(ICharacterService characterService)
-        {
-            this.characterService = characterService;
-        }
+             => this.characterService = characterService;
+
         public DetailsCharacterViewModel Character { get; set; }
         public void OnGet(int id)
         {
