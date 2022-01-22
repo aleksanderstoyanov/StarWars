@@ -5,8 +5,9 @@ namespace StarWarsApp.Pages.Characters
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
-    using StarWarsApp.Services.Services.Characters;
     using StarWarsApp.ViewModels.Models.Characters;
+    using StarWarsApp.Services.Services.Contracts;
+
     public class IndexModel : PageModel
     {
         private readonly ICharacterService characterService;

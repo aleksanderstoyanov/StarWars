@@ -3,7 +3,7 @@
     using AutoMapper.QueryableExtensions;
     using StarWarsApp.Data.Data;
     using StarWarsApp.Data.Data.Entities;
-    using StarWarsApp.Services.Services.Cache;
+    using StarWarsApp.Services.Services.Contracts;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;

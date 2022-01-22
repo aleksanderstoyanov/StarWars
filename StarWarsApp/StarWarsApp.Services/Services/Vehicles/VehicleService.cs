@@ -1,7 +1,7 @@
 ﻿namespace StarWarsApp.Services.Services.Vehicles
 {
     using System.Collections.Generic;
-    using StarWarsApp.Services.Services.Cache;
+    using StarWarsApp.Services.Services.Contracts;
 
     public class VehicleService : IVehicleService
     {

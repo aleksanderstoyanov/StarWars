@@ -1,4 +1,4 @@
-﻿namespace StarWarsApp.Services.Services.CharacterMovies
+﻿namespace StarWarsApp.Services.Services.Contracts
 {
     using System.Collections.Generic;
     using StarWarsApp.Services.Services.Characters;

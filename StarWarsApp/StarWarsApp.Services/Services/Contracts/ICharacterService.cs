@@ -1,4 +1,6 @@
-﻿namespace StarWarsApp.Services.Services.Characters
+﻿using StarWarsApp.Services.Services.Characters;
+
+namespace StarWarsApp.Services.Services.Contracts
 {
     using System.Threading.Tasks;
     using System.Collections.Generic;

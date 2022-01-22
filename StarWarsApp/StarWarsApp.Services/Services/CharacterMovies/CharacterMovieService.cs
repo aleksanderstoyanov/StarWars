@@ -6,6 +6,7 @@
     using AutoMapper.QueryableExtensions;
     using StarWarsApp.Services.Services.Movies;
     using StarWarsApp.Services.Services.Characters;
+    using StarWarsApp.Services.Services.Contracts;
 
     public class CharacterMovieService : BaseService,ICharacterMovieService
     {

@@ -1,7 +1,7 @@
 namespace StarWarsApp.Pages.Characters
 {
     using Microsoft.AspNetCore.Mvc.RazorPages;
-    using StarWarsApp.Services.Services.Characters;
+    using StarWarsApp.Services.Services.Contracts;
     using StarWarsApp.ViewModels.Models.Characters;
     public class DetailsModel : PageModel
     {

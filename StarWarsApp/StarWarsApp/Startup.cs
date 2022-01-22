@@ -11,6 +11,7 @@ namespace StarWarsApp
     using StarWarsApp.Services.Services.Cache;
     using StarWarsApp.Services.Services.CharacterMovies;
     using StarWarsApp.Services.Services.Characters;
+    using StarWarsApp.Services.Services.Contracts;
     using StarWarsApp.Services.Services.Movies;
     using StarWarsApp.Services.Services.Vehicles;
     public class Startup

@@ -3,8 +3,9 @@ namespace StarWarsApp.Pages.Movies
     using System.Linq;
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Mvc.RazorPages;
-    using StarWarsApp.Services.Services.CharacterMovies;
     using StarWarsApp.ViewModels.Models.Characters;
+    using StarWarsApp.Services.Services.Contracts;
+
     public class CharactersModel : PageModel
     {
         private readonly ICharacterMovieService characterMovieService;

@@ -10,6 +10,8 @@
     using StarWarsApp.Services.Services.Vehicles;
     using StarWarsApp.Services.Services.Characters;
     using static StarWarsApp.Common.GlobalConstants;
+    using StarWarsApp.Services.Services.Contracts;
+
     public class CacheService : BaseService, ICacheService
     {
         private readonly IMemoryCache memoryCache;

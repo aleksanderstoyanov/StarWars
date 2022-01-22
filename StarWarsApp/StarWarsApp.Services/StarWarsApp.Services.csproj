@@ -13,12 +13,12 @@
   <ItemGroup>
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\Cache\CacheService.cs" />
-    <Compile Include="Services\Cache\ICacheService.cs" />
+    <Compile Include="Services\Contracts\ICacheService.cs" />
     <Compile Include="Services\CharacterMovies\CharacterMovieService.cs" />
-    <Compile Include="Services\CharacterMovies\ICharacterMovieService.cs" />
+    <Compile Include="Services\Contracts\ICharacterMovieService.cs" />
     <Compile Include="Services\Characters\CharacterService.cs" />
     <Compile Include="Services\Characters\CharacterServiceModel.cs" />
-    <Compile Include="Services\Characters\ICharacterService.cs" />
+    <Compile Include="Services\Contracts\ICharacterService.cs" />
     <Compile Include="Services\Movies\IMoviesService.cs" />
     <Compile Include="Services\Movies\MovieService.cs" />
     <Compile Include="Services\Movies\MovieServiceModel.cs" />
