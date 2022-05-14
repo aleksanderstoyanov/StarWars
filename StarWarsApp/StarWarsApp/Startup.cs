@@ -2,6 +2,7 @@ namespace StarWarsApp
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -30,8 +31,19 @@ namespace StarWarsApp
         {
             services.AddRazorPages();
             services.AddControllers();
+
             services.AddDbContext<ApplicationDbContext>(options =>
               options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnectionString")));
+
+            services.AddDefaultIdentity<IdentityUser>(options =>
+            {
+                options.Password.RequireUppercase = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            })
+            .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddTransient<ICharacterService, CharacterService>();
             services.AddTransient<IMoviesService, MovieService>();
             services.AddTransient<IVehicleService, VehicleService>();
