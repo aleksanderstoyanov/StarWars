@@ -28,6 +28,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 })
 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+builder.Services.AddSignalR();
 builder.Services.AddTransient<ICharacterService, CharacterService>();
 builder.Services.AddTransient<IMoviesService, MovieService>();
 builder.Services.AddTransient<IVehicleService, VehicleService>();
