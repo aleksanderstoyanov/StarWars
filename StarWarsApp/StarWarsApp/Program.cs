@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StarWarsApp.Data.Data;
 using StarWarsApp.Data.Data.Seeders;
+using StarWarsApp.Hubs;
 using StarWarsApp.Services.Services.Cache;
 using StarWarsApp.Services.Services.CharacterMovies;
 using StarWarsApp.Services.Services.Characters;
@@ -64,6 +65,7 @@ app.UseAuthorization();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapRazorPages();
+    endpoints.MapHub<ChatHub>("/chatHub");
     endpoints.MapControllers();
 });
 
