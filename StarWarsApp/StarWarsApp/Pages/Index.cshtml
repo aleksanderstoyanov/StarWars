@@ -1,13 +1,12 @@
 ﻿@page
 @model IndexModel
+
 @{
     ViewData["Title"] = "Welcome to a sample Star Wars Razor Page";
     var firstCharacter = Model.Characters[0];
     var secondCharacter = Model.Characters[1];
     var thirdCharacter = Model.Characters[2];
 }
-
-
 
 <div class="text-center">
     <h1 class="display-4">@ViewData["Title"]</h1>
