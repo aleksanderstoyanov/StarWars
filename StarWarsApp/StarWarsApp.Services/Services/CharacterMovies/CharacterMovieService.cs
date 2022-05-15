@@ -11,16 +11,11 @@
     public class CharacterMovieService : BaseService,ICharacterMovieService
     {
         private readonly ApplicationDbContext dbContext;
-        private readonly ICharacterService charactersService;
         private readonly IMoviesService moviesService;
 
-        public CharacterMovieService(ApplicationDbContext dbContext,
-          ICharacterService charactersService,
-          IMoviesService moviesService
-         )
+        public CharacterMovieService(ApplicationDbContext dbContext, IMoviesService moviesService)
         {
             this.dbContext = dbContext;
-            this.charactersService = charactersService;
             this.moviesService = moviesService;
         }
         public IEnumerable<CharacterServiceModel> GetCharacters(int movieId)

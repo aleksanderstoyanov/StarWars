@@ -1,0 +1,78 @@
+﻿@page
+@model StarWarsApp.Pages.Chat.ChatModel
+
+@{
+    ViewData["title"] = "Chat Forum";
+}
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/css/chat.css" rel="stylesheet" />
+
+<h3 class="offset-5" style="color:white">@ViewData["title"]</h3>
+
+<div class="container">
+<div class="row clearfix">
+    <div class="col-lg-12">
+            <div class="chat bg-white">
+                <div class="chat-history">
+                    <ul class="m-b-0">
+                        <li class="clearfix">
+                            <div class="message-data">
+                                <span class="message-data-time"><strong>Big Star Wars Fan (kappa)</strong> 22:50:27</span>
+                            </div>
+                            <div class="message my-message">Maan, Rogue One's ending was epic!</div>                                    
+                        </li>                               
+                        <li class="clearfix">
+                            <div class="message-data">
+                                <span class="message-data-time"><strong>Big Star Wars Fan (kappa)</strong> 22:50:27</span>
+                            </div>
+                            <div class="message my-message">Really loved the Han Solo movie, felt so nostalgic.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="chat-message clearfix">
+                    <div class="input-group mb-0">
+                        <div class="input-group-prepend">
+                            <button id="message-sent" type="submit" class="input-group-text"><i class="fa fa-send"></i></button>
+                        </div>
+                        <input type="hidden" id="username" value="@User.Identity.Name">
+                        <input id="message" type="text" class="form-control" placeholder="Enter text here...">                                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+       var connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chatHub")
+            .build();
+        
+        connection.on("ReceiveMessage",function(username,message){
+            var currentDate = new Date();
+            var day = currentDate.getDay();
+            var hour = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+
+
+            $(".chat-history > ul").append(`
+            <li class='clearfix'>
+                <div class='message-data'>
+                    <span message-data-time><strong>${username}</strong> ${hour}</span>
+                </div>
+                <div class="message my-message">${message}</div>
+            </li>`)
+
+        })
+
+        $("#message-sent").on('click',function(){
+            var username = $("#username").val();
+            var message = $("#message").val();
+            connection.invoke("SendMessage",username,message);
+            $("#message").val("");
+        })
+
+        connection.start();
+    </script>
+}
