@@ -3,8 +3,8 @@
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
     using StarWarsApp.ViewModels.Models.Api;
-    using StarWarsApp.Services.Services.Vehicles;
     using System.Linq;
+    using StarWarsApp.Services.Services.Contracts;
 
     [ApiController]
     [Route("api/[controller]")]

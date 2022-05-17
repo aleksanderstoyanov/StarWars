@@ -5,8 +5,9 @@ namespace StarWarsApp.Pages.Movies
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
-    using StarWarsApp.Services.Services.Movies;
     using StarWarsApp.ViewModels.Models.Movies;
+    using StarWarsApp.Services.Services.Contracts;
+
     public class IndexModel : PageModel
     {
         private readonly IMoviesService moviesService;

@@ -19,11 +19,11 @@
     <Compile Include="Services\Characters\CharacterService.cs" />
     <Compile Include="Services\Characters\CharacterServiceModel.cs" />
     <Compile Include="Services\Contracts\ICharacterService.cs" />
-    <Compile Include="Services\Movies\IMoviesService.cs" />
+    <Compile Include="Services\Contracts\IMoviesService.cs" />
     <Compile Include="Services\Movies\MovieService.cs" />
     <Compile Include="Services\Movies\MovieServiceModel.cs" />
     <Compile Include="Services\Profiles\StarWarsProfile.cs" />
-    <Compile Include="Services\Vehicles\IVehicleService.cs" />
+    <Compile Include="Services\Contracts\IVehicleService.cs" />
     <Compile Include="Services\Vehicles\VehicleService.cs" />
     <Compile Include="Services\Vehicles\VehicleServiceModel.cs" />
   </ItemGroup>

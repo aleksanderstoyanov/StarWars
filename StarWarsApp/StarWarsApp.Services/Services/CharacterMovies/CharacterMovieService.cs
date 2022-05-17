@@ -4,7 +4,6 @@
     using StarWarsApp.Data.Data;
     using System.Collections.Generic;
     using AutoMapper.QueryableExtensions;
-    using StarWarsApp.Services.Services.Movies;
     using StarWarsApp.Services.Services.Characters;
     using StarWarsApp.Services.Services.Contracts;
 

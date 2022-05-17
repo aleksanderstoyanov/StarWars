@@ -1,6 +1,7 @@
 namespace StarWarsApp.Pages.Movies
 {
     using Microsoft.AspNetCore.Mvc.RazorPages;
+    using StarWarsApp.Services.Services.Contracts;
     using StarWarsApp.Services.Services.Movies;
     public class DetailsModel : PageModel
     {
